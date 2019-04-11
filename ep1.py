@@ -2,7 +2,7 @@
 #
 # Alunos: 
 # - aluno A: Gabriel Pascua de Freitas Moreira, gabrielpfm@al.insper.edu.br
-# - aluno B: Sicrano de Almeida, sicranoa1@insper.edu.br
+# - aluno B: Gabriel Huerta Façanha, gabrielhf@al.insper.edu.br
 def tracinho(nome_cenario_atual):
     traco = '-' * len(nome_cenario_atual)
     return traco
