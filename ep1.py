@@ -60,9 +60,16 @@ def main():
     game_over = False
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
-
-        print (nome_cenario_atual)
-        print (tracinho(nome_cenario_atual))
+        for chave in cenario_atual:
+            if chave == 'titulo':
+                nome = cenario_atual[chave]
+            elif chave == 'descricao':
+                descricao = cenario_atual[chave]
+                
+        print (nome)
+        print (tracinho(nome))
+        print (descricao)
+        
        
     
         opcoes = cenario_atual['opcoes']
