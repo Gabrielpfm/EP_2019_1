@@ -3,7 +3,9 @@
 # Alunos: 
 # - aluno A: Gabriel Pascua de Freitas Moreira, gabrielpfm@al.insper.edu.br
 # - aluno B: Sicrano de Almeida, sicranoa1@insper.edu.br
-
+def tracinho(nome_cenario_atual):
+    traco = '-' * len(nome_cenario_atual)
+    return traco
 def carregar_cenarios():
     cenarios = {
         "inicio": {
@@ -59,9 +61,10 @@ def main():
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
 
-        # Aluno A: substitua este comentário pelo código para imprimir 
-        # o cenário atual.
-
+        print (nome_cenario_atual)
+        print (tracinho(nome_cenario_atual))
+       
+    
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
