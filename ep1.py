@@ -87,6 +87,7 @@ def main():
             escolha = input('Digite aqui => ')
             if escolha in opcoes:
                 nome_cenario_atual = escolha
+                print()
             else:
                 print("Sua indecisão foi sua ruína!")
                 game_over = True
