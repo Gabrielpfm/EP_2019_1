@@ -3,6 +3,7 @@
 # Alunos: 
 # - aluno A: Gabriel Pascua de Freitas Moreira, gabrielpfm@al.insper.edu.br
 # - aluno B: Gabriel Huerta Façanha, gabrielhf@al.insper.edu.br
+import json
 def Quantidade_de_ataque(ataque):
     força = 1 + ataque
     return força
@@ -20,9 +21,7 @@ def tracinho(nome_cenario_atual):
     return traco
 def carregar_cenarios():
     with open('cenarios.json','r') as arquivo:
-        conteudo = arquivo.read()
-    import json
-    cenarios = json.loads(conteudo)
+        cenarios = json.load(arquivo)
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 

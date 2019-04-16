@@ -1,59 +1,57 @@
-cenarios = {
-        "inicio": {
-            "titulo": "Saguao do perigo",
-            "descricao": "Voce esta no saguao de entrada do insper",
-            "opcoes": {
-                "corredor": "Desvende os vastos corredores do Insper"
-            }
-        },
-        "andar professor": {
-            "titulo": "Andar do desespero",
-            "descricao": "Voce chegou ao andar da sala do seu professor",
-            "opcoes": {
-                "corredor": "Tomar o elevador de volta para o primeiro andar",
-                "professor": "Falar com o professor"
-            }
-        },
-        "professor": {
-            "titulo": "O monstro do Python",
-            "descricao": "Voce foi pedir para o professor adiar o EP. "
-                         "O professor revelou que é um monstro disfarçado "
-                         "e devorou sua alma.",
-            "opcoes": {}
-        },
-        "biblioteca": {
-            "titulo": "Caverna da tranquilidade",
-            "descricao": "Voce esta na biblioteca",
-            "opcoes": {
-                "corredor": "Voltar para o corredor",
-                "aquario": "Vá até um aquário de estudos"
-            }
-        },
-        "aquario": {
-            "titulo": "O aquário",
-            "descricao": "Você está em um aquário de estudos. Está tão calmo...",
-            "opcoes": {
-                "estudar":"Ficar aqui para estudar",
-                "biblioteca":"Voltar pra biblioteca"
-            }
-        },
-        "corredor": {
-            "titulo": "Corredores infinitos",
-            "descricao": "Você caminha pelos vastos corredores do insper.... Ao longo do caminho, algumas portas se revelam: ",
-            "opcoes": {
-                "biblioteca":"",
-                "quarto andar":"Tomar o elevador para o 4º andar",
-                "andar professor":"Tomar o elevador para o andar do professor"
-            },
-        "quarto andar": {
-            "titulo": "Andar da dúvida",
-            "descricao": "O quarto andar. Você checara o seu e-mail, que dizia que na sala 405 teria atendimento."
-            "Porém, ao sair do elevador, você escuta ruídos vindos da salinha: "
-            "são seus amigos de economia e ADM jogando videogame...",
-            "opcoes": {
-                "relaxar":"Junte-se aos seus amigos e vá jogar WII!",
-                "atendimento":"Vá pro atendimento. Vai que dá certo...",
-                "corredor":"Volte para o corredor do primeiro andar",
-                "andar professor":"Tomar o elevador para o andar em que está o professor"
-                
+{
+	"inicio": {
+		"titulo": "Saguao do perigo",
+		"descricao": "Voce esta no saguao de entrada do insper",
+        "opcoes": {
+            "corredor": "Desvende os vastos corredores do Insper"
+        }
+    },
+    "andar professor": {
+        "titulo": "Andar do desespero",
+        "descricao": "Voce chegou ao andar da sala do seu professor",
+        "opcoes": {
+            "corredor": "Tomar o elevador de volta para o primeiro andar",
+            "professor": "Falar com o professor"
+        }
+    },
+    "professor": {
+        "titulo": "O monstro do Python",
+        "descricao": "Voce foi pedir para o professor adiar o EP. O professor revelou que Ã© um monstro disfarÃ§ado e devorou sua alma.",
+        "opcoes": {}
+    },
+    "biblioteca": {
+        "titulo": "Caverna da tranquilidade",
+        "descricao": "Voce esta na biblioteca",
+        "opcoes": {
+            "corredor": "Voltar para o corredor",
+            "aquario": "VÃ¡ atÃ© um aquÃ¡rio de estudos"
+        }
+    },
+    "aquario": {
+        "titulo": "O aquÃ¡rio",
+        "descricao": "VocÃª estÃ¡ em um aquÃ¡rio de estudos. EstÃ¡ tÃ£o calmo...",
+        "opcoes": {
+            "estudar":"Ficar aqui para estudar",
+            "biblioteca":"Voltar pra biblioteca"
+        }
+    },
+    "corredor": {
+        "titulo": "Corredores infinitos",
+        "descricao": "VocÃª caminha pelos vastos corredores do insper.... Ao longo do caminho, algumas portas se revelam: ",
+        "opcoes": {
+            "biblioteca":"VÃ¡ atÃ© a biblioteca 'estudar'",
+            "quarto andar":"Tomar o elevador para o 4Âº andar",
+            "andar professor":"Tomar o elevador para o andar do professor"
+        }
+    },
+    "quarto andar": {
+        "titulo": "Andar da dÃºvida",
+        "descricao": "O quarto andar. VocÃª checara o seu e-mail, que dizia que na sala 405 teria atendimento. PorÃ©m, ao sair do elevador, vocÃª escuta ruÃ­dos vindos da salinha: sÃ£o seus amigos de economia e ADM jogando videogame...",
+        "opcoes": {
+            "relaxar":"Junte-se aos seus amigos e vÃ¡ jogar WII!",
+            "atendimento":"VÃ¡ pro atendimento. Vai que dÃ¡ certo...",
+            "corredor":"Volte para o corredor do primeiro andar",
+            "andar professor":"Tomar o elevador para o andar em que estÃ¡ o professor"                
+        }
     }
+}
