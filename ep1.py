@@ -69,15 +69,33 @@ def main():
             
             escolha = input('Digite aqui => ')
             if escolha in opcoes:
-                nome_cenario_atual = escolha
+                if escolha == 'relaxar':
+                    print()
+                    print(' nao implementado ')
+                    print(' aqui, aparece algo como: "perdeu tempo à toa!"')
+                    print()
+                elif escolha == 'estudar':
+                    print()
+                    print(' nao implementado ')
+                    print('aqui, vai aparecer o mob "amigo"')
+                    print()
+                elif  escolha == 'atendimento':
+                    print()
+                    print(' nao implementado ')
+                    print('aqui, vai entrar no modo luta e ganhar um item')
+                    print()                    
+                else:    
+                    nome_cenario_atual = escolha
                 print()
             else:
-                print("Sua indecisão foi sua ruína!")
+                print(" ----------------------------")
+                print(" |Sua indecisão foi sua ruína!")
+                print(" ----------------------------")
                 game_over = True
 
     print("Você morreu!")
-
-
+    print()
+    
 # Programa principal.
 if __name__ == "__main__":
     main()
