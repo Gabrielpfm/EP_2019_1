@@ -4,21 +4,7 @@
 # - aluno A: Gabriel Pascua de Freitas Moreira, gabrielpfm@al.insper.edu.br
 # - aluno B: Gabriel Huerta Façanha, gabrielhf@al.insper.edu.br
 import json
-def Quantidade_de_ataque(ataque):
-    força = 1 + ataque
-    return força
 
-def Quantidade_de_defesa(defesa):
-    defence = 1 + defesa
-    return defence   
-    
-def Health_bar(energia,dano,defesa):
-    life  = 3 + energia - (dano/Quantidade_de_defesa(defesa))
-    return life 
-
-def tracinho(nome_cenario_atual):
-    traco = '-' * len(nome_cenario_atual)
-    return traco
 def carregar_cenarios():
     with open('cenarios.json','r',encoding = 'utf-8') as arquivo:
         cenarios = json.load(arquivo)
@@ -39,7 +25,21 @@ def main():
     print()
 
     cenarios, nome_cenario_atual = carregar_cenarios()
+    def Quantidade_de_ataque(ataque):
+        força = 1 + ataque
+        return força
 
+    def Quantidade_de_defesa(defesa):
+        defence = 1 + defesa
+        return defence   
+        
+    def Health_bar(energia,dano,defesa):
+        life  = 3 + energia - (dano/Quantidade_de_defesa(defesa))
+        return life 
+    
+    def tracinho(nome_cenario_atual):
+        traco = '-' * len(nome_cenario_atual)
+        return traco
     game_over = False
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
