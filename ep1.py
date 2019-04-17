@@ -37,7 +37,7 @@ def main():
         return defence   
         
     def Health_bar(energia,dano,defesa):
-        life  = 3 + energia - (dano/Quantidade_de_defesa(defesa))
+        life  = 3 + energia - (dano_total)
         return life 
     
     def tracinho(nome_cenario_atual):
@@ -49,7 +49,7 @@ def main():
     energia = 0
     ataque = 0
     dano = 0
-    dano_total = 0
+    dano_total = 0.0
         
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
@@ -104,7 +104,7 @@ def main():
                             if stat == 'dano':
                                 
                                 dano += azar
-                                dano_total += dano
+                                dano_total += (dano/Quantidade_de_defesa)
                                 encontro_ruim = ('Perdeu {0} de vida'.format(dano/Quantidade_de_defesa(defesa)))    
                             else:        
                                 encontro_ruim = ('Perdeu {0} de {1}'.format(azar,stat))
