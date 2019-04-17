@@ -128,11 +128,35 @@ def main():
                                  defesa += (-azar)
                                 
                     encontros = False
-       
+        if sistema_de_batalha == True:
+            print('Inicia Batalha')
+            vida_inimigo = 5
+            dano = 0
+            while sistema_de_batalha == True :
+                dano = 0
+                vida_inimigo = vida_inimigo - Quantidade_de_ataque(ataque)
+                print ("Vida do seu Inimigo ==> {0}".format(vida_inimigo))
+                if vida_inimigo <= 0:
+                    sistema_de_batalha = False
+                    print ('Você venceu') 
+                else:
+                    if Quantidade_de_defesa(defesa) > 0 :
+                        dano += 1
+                        dano_total += (dano/Quantidade_de_defesa(defesa))
+                    else:
+                        dano += 1 
+                        dano_total += dano
+                    if Health_bar(energia,dano_total) <= 0:
+                        print('Você perdeu a batalha')
+                        sistema_de_batalha = False
+                        print(Health_bar(energia,dano_total))
+               
         encontros = True
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
+            game_over = True
+        elif Health_bar(energia,dano_total) <= 0 :
             game_over = True
         else:
 
