@@ -148,7 +148,7 @@ def main():
             if escolha in opcoes:
                 if escolha == 'stats':
                     print()
-                    print("Sua vida é {0}".format(Health_bar(energia,dano,defesa)))
+                    print("Sua vida é {0}".format(Health_bar(energia,dano_total)))
                     print("Sua defesa é {0}".format(Quantidade_de_defesa(defesa)))
                     print("Seu ataque é {0}".format(Quantidade_de_ataque(ataque)))
                 elif escolha == 'relaxar':
