@@ -12,11 +12,14 @@ def carregar_cenarios():
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
-with open('dic_mobs_bem.json','r',encoding = 'utf-8') as mobsbem:
-        bem = json.load(mobsbem)
-with open('dic_mobs_mal.json','r',encoding = 'utf-8') as mobsmal:
-        mal = json.load(mobsmal)
-mal = {1: {'um veterano':{'Iniciar batalha':'batalha'}},2:{'um "amigo"':{'Ele copiou seu trabalho':"dano"}},3:{'uma nota ruim':{'Você ficou desanimado': 'defesa'}} ,4: {'um professor':{'Ele te lembrou de outro trabalho':'dano'}},5:{'uma goteira':{'Você se molhou e ficou lento':'ataque'}}}
+bem = {1:{"um Ninja":"ataque"},2:{"um amigo":"ataque"},3:{"um cachorro":"defesa"},
+       4:{"uma marmita":"defesa"},5:{"uma máquina de café":"energia"}}
+
+mal = {1:{"um veterano" : {"Iniciar batalha":"batalha"}},
+2:{"um amigo" : {"Ele copiou seu trabalho":"dano"}},
+3:{"uma nota ruim":{"Você ficou desanimado": "defesa"}},
+4:{"um professor":{"Ele te lembrou de outro trabalho":"dano"}},
+5:{"uma goteira":{"Você se molhou e ficou lento":"ataque"}}}
 
 def main():
     print("Na hora do sufoco!")
@@ -39,7 +42,7 @@ def main():
         defence = 1 + defesa
         return defence   
         
-    def Health_bar(energia,dano,defesa):
+    def Health_bar(energia,dano_total):
         life  = 3 + energia - (dano_total)
         return life 
     
@@ -53,7 +56,7 @@ def main():
     ataque = 0
     dano = 0
     dano_total = 0.0
-        
+    sistema_de_batalha = False    
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
         
