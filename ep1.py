@@ -36,13 +36,14 @@ def main():
         defence = 1 + defesa
         return defence   
         
-    def Health_bar(energia,dano,defesa):
+    def Health_bar(energia,dano_total):
         life  = 3 + energia - (dano_total)
         return life 
     
     def tracinho(nome_cenario_atual):
         traco = '-' * len(nome_cenario_atual)
         return traco
+    
     game_over = False
     encontros = False
     defesa = 0
@@ -50,8 +51,12 @@ def main():
     ataque = 0
     dano = 0
     dano_total = 0.0
+    sistema_de_batalha = False
+    
+
         
     while not game_over:
+        
         cenario_atual = cenarios[nome_cenario_atual]
         
         titulo = cenario_atual['titulo']
@@ -63,8 +68,8 @@ def main():
         print()
         dano = 0
         if encontros == True:
-                MOBS = random.randint(1,11)
-                mob = random.randint(1,5)
+                MOBS = 1
+                mob = 1
                 encontro = random.randint(1,2)
                 if encontro == 2:
                     if MOBS % 2 == 0:
@@ -112,7 +117,6 @@ def main():
                         print(oque)
                         if stat == 'batalha':
                             sistema_de_batalha = True
-                            
                         else:
                             print()
                             print('*'*len(encontro_ruim))
@@ -125,11 +129,34 @@ def main():
                                  defesa += (-azar)
                                 
                     encontros = False
-       
+        if sistema_de_batalha == True:
+             print('Inicia Batalha')
+             vida_inimigo = 5
+             dano = 0
+             while sistema_de_batalha == True :
+                 dano = 0
+                 vida_inimigo = vida_inimigo - Quantidade_de_ataque(ataque)
+                 print ("Vida do seu Inimigo ==> {0}".format(vida_inimigo))
+                 if vida_inimigo <= 0:
+                     sistema_de_batalha = False
+                     print ('Você venceu') 
+                 else:
+                     if Quantidade_de_defesa(defesa) > 0 :
+                        dano += 1
+                        dano_total += (dano/Quantidade_de_defesa(defesa))
+                     else:
+                        dano += 1 
+                        dano_total += dano
+                 if Health_bar(energia,dano_total) <= 0:
+                     print('Você perdeu a batalha')
+                     sistema_de_batalha = False
+                     print(Health_bar(energia,dano_total))
         encontros = True
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
+            game_over = True
+        elif Health_bar(energia,dano_total) <= 0 :
             game_over = True
         else:
 
