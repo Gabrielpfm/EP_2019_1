@@ -1,5 +1,5 @@
 # EP 2019-1: Escape Insper
-#
+#(>'-')> <('-'<) ^('-')^ v('-')v(>'-')>
 # Alunos: 
 # - aluno A: Gabriel Pascua de Freitas Moreira, gabrielpfm@al.insper.edu.br
 # - aluno B: Gabriel Huerta Façanha, gabrielhf@al.insper.edu.br
