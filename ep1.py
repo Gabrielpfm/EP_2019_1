@@ -61,10 +61,6 @@ def main():
         print (tracinho(titulo))
         print (descricao)
         print()
-        print("Stats")
-        print("Sua vida é {0}".format(Health_bar(energia,dano,defesa)))
-        print("Sua defesa é {0}".format(Quantidade_de_defesa(defesa)))
-        print("Seu ataque é {0}".format(Quantidade_de_ataque(ataque)))
         dano = 0
         if encontros == True:
                 MOBS = random.randint(1,11)
@@ -147,6 +143,10 @@ def main():
             
             escolha = input('Digite aqui => ')
             if escolha in opcoes:
+                if escolha == 'stats':
+                    print("Sua vida é {0}".format(Health_bar(energia,dano,defesa)))
+                    print("Sua defesa é {0}".format(Quantidade_de_defesa(defesa)))
+                    print("Seu ataque é {0}".format(Quantidade_de_ataque(ataque)))
                 if escolha == 'relaxar':
                     print()
                     print(' nao implementado ')
