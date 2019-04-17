@@ -20,7 +20,7 @@ def tracinho(nome_cenario_atual):
     traco = '-' * len(nome_cenario_atual)
     return traco
 def carregar_cenarios():
-    with open('cenarios.json','r') as arquivo:
+    with open('cenarios.json','r',encoding = 'utf-8') as arquivo:
         cenarios = json.load(arquivo)
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
