@@ -68,8 +68,8 @@ def main():
         print()
         dano = 0
         if encontros == True:
-                MOBS = 1
-                mob = 1
+                MOBS = random.randint(1,11)
+                mob = random.randint(1,5)
                 encontro = random.randint(1,2)
                 if encontro == 2:
                     if MOBS % 2 == 0:
@@ -172,7 +172,7 @@ def main():
             if escolha in opcoes:
                 if escolha == 'stats':
                     print()
-                    print("Sua vida é {0}".format(Health_bar(energia,dano,defesa)))
+                    print("Sua vida é {0}".format(Health_bar(energia,dano_total)))
                     print("Sua defesa é {0}".format(Quantidade_de_defesa(defesa)))
                     print("Seu ataque é {0}".format(Quantidade_de_ataque(ataque)))
                 elif escolha == 'relaxar':
