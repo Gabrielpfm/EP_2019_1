@@ -102,10 +102,14 @@ def main():
                                 oque = action
                                 stat = ação[oque]
                             if stat == 'dano':
-                                
-                                dano += azar
-                                dano_total += (dano/Quantidade_de_defesa)
-                                encontro_ruim = ('Perdeu {0} de vida'.format(dano/Quantidade_de_defesa(defesa)))    
+                                if Quantidade_de_defesa(defesa) > 0 :
+                                    dano += azar
+                                    dano_total += (dano/Quantidade_de_defesa(defesa))
+                                    encontro_ruim = ('Perdeu {0} de vida'.format(dano/Quantidade_de_defesa(defesa)))
+                                else:
+                                    dano += azar
+                                    dano_total += dano
+                                    encontro_ruim = (('Perdeu {0} de vida'.format(dano)))
                             else:        
                                 encontro_ruim = ('Perdeu {0} de {1}'.format(azar,stat))
                         print ('Voce encontrou {0}'.format(pessoa))
