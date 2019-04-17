@@ -144,10 +144,11 @@ def main():
             escolha = input('Digite aqui => ')
             if escolha in opcoes:
                 if escolha == 'stats':
+                    print()
                     print("Sua vida é {0}".format(Health_bar(energia,dano,defesa)))
                     print("Sua defesa é {0}".format(Quantidade_de_defesa(defesa)))
                     print("Seu ataque é {0}".format(Quantidade_de_ataque(ataque)))
-                if escolha == 'relaxar':
+                elif escolha == 'relaxar':
                     print()
                     print(' nao implementado ')
                     print(' aqui, aparece algo como: "perdeu tempo à toa!"')
