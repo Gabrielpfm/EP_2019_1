@@ -1,5 +1,5 @@
 # EP 2019-1: Escape Insper
-#(>'-')> <('-'<) ^('-')^ v('-')v(>'-')>
+#
 # Alunos: 
 # - aluno A: Gabriel Pascua de Freitas Moreira, gabrielpfm@al.insper.edu.br
 # - aluno B: Gabriel Huerta Façanha, gabrielhf@al.insper.edu.br
@@ -60,6 +60,7 @@ def main():
     sistema_de_batalha = False 
     inventario ={}
     item_drop = False
+    vitoria = True
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
         titulo = cenario_atual['titulo']
@@ -149,7 +150,7 @@ def main():
                                 
                     encontros = False
         if sistema_de_batalha == True:
-            print('Inicia Batalha')
+            print('Iniciar Batalha')
             vida_inimigo = 5
             dano = 0
             while sistema_de_batalha == True :
@@ -169,7 +170,7 @@ def main():
                     if Health_bar(energia,dano_total) <= 0:
                         print('Você perdeu a batalha')
                         sistema_de_batalha = False
-                        print(Health_bar(energia,dano_total))
+                        print("Sua vida ==> {0}".format(Health_bar(energia,dano_total)))
                
         encontros = True
         item_drop = True
@@ -207,24 +208,44 @@ def main():
                     print("Sua defesa é {0}".format(Quantidade_de_defesa(defesa)))
                     print("Seu ataque é {0}".format(Quantidade_de_ataque(ataque)))
                 elif escolha == 'relaxar':
-                    print()
-                    print(' nao implementado ')
-                    print(' aqui, aparece algo como: "perdeu tempo à toa!"')
-                    print()
-                elif escolha == 'estudar':
-                    print()
-                    print(' nao implementado ')
-                    print('aqui, vai aparecer o mob "amigo"')
-                    print()
+                    print("E a DP veio com tudo!")
+                    print("Quem mandou não se empenhar")
+                    print("¯\_(ツ)_/¯")
+                    game_over = True
+                elif escolha == 'barbara':
+                    for i in inventario:
+                        if i == "Caixa de chocolate":
+                            if inventario[i] <= 0:
+                                print("VOCÊ ESQUECEU DO PRESENTE!")
+                                print("Você devia ter me escutado")
+                                print("Bárbara: Você achou que eu ia te ajudar sem ganhar nada?")
+                                print("Você foi completamento destruído pela Bárbara")
+                                print("Sua vida é de {0}".format(Health_bar(0,9999999999999999999999999999999999)))
+                                game_over = True
+                            else:
+                                nome_cenario_atual = escolha
+                    
                 elif  escolha == 'atendimento':
                     for i in inventario:
                         if i == "E-mail do atendimento":
                             if inventario[i] <= 0:
                                 print("Você foi avisado")
-                                print("¯\_(ツ)_/¯")
+                                print("(ლ‸－)")
                                 game_over = True
                             else:
                                 nome_cenario_atual = escolha
+                elif  escolha == 'entregar EP':
+                    for i in inventario:
+                        if i == "EP finalizado":
+                            if inventario[i] <= 0:
+                                print("Você não tinha o EP pronto")
+                                print("Sua alma foi devorada")
+                            else:
+                                print("Parabéns você entregou o EP a tempo")
+                                print("Você derrotou o monstro do Python")
+                                print("(>'-')> <('-'<) ^('-')^ v('-')v(>'-')>")
+                                game_over = True
+                                vitoria = True
                                 
                     print()
                     print(' nao implementado ')
@@ -238,9 +259,11 @@ def main():
                 print("Sua indecisão foi sua ruína!")
                 print(" ----------------------------")
                 game_over = True
-
-    print("Você morreu!")
-    print()
+    if vitoria == True:
+        print("Você venceu")
+    else:
+        print("Você morreu!")
+        print()
     
 # Programa principal.
 if __name__ == "__main__":
