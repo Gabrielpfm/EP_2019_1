@@ -15,7 +15,7 @@ def carregar_cenarios():
 bem = {1:{"um Ninja":"ataque"},2:{"um amigo":"ataque"},3:{"um cachorro":"defesa"},
        4:{"uma marmita":"defesa"},5:{"uma máquina de café":"energia"}}
 
-mal = {1:{"um veterano" : {"Iniciar batalha":"batalha"}},
+mal = {1:{"um veterano" : {"Iniciar Batalha":"batalha"}},
 2:{"um amigo" : {"Ele copiou seu trabalho":"dano"}},
 3:{"uma nota ruim":{"Você ficou desanimado": "defesa"}},
 4:{"um professor":{"Ele te lembrou de outro trabalho":"dano"}},
@@ -60,16 +60,24 @@ def main():
     sistema_de_batalha = False 
     inventario ={}
     item_drop = False
-    vitoria = True
-    while not game_over:
+    vitoria = False
+    rodadas = 0
+    maximo_de_rodadas = 5
+    while not game_over and rodadas <= maximo_de_rodadas:
         cenario_atual = cenarios[nome_cenario_atual]
         titulo = cenario_atual['titulo']
         descricao = cenario_atual['descricao']
-                
+        print(tracinho("Você tem {0} rodada(s) restante(s)".format(maximo_de_rodadas-rodadas)))
+        print("Você tem {0} rodada(s) restante(s)".format(maximo_de_rodadas-rodadas))
+        print(tracinho("Você tem {0} rodada(s) restante(s)".format(maximo_de_rodadas-rodadas)))
+        print()        
         print (titulo)
         print (tracinho(titulo))
         print (descricao)
         print()
+        
+        
+        
         dano = 0
         if item_drop == True:
             chance_item = random.randint(1,5)
@@ -150,7 +158,6 @@ def main():
                                 
                     encontros = False
         if sistema_de_batalha == True:
-            print('Iniciar Batalha')
             vida_inimigo = 5
             dano = 0
             while sistema_de_batalha == True :
@@ -213,6 +220,7 @@ def main():
                     print("¯\_(ツ)_/¯")
                     game_over = True
                 elif escolha == 'barbara':
+                    rodadas +=1
                     for i in inventario:
                         if i == "Caixa de chocolate":
                             if inventario[i] <= 0:
@@ -226,6 +234,7 @@ def main():
                                 nome_cenario_atual = escolha
                     
                 elif  escolha == 'atendimento':
+                    rodadas +=1
                     for i in inventario:
                         if i == "E-mail do atendimento":
                             if inventario[i] <= 0:
@@ -240,6 +249,7 @@ def main():
                             if inventario[i] <= 0:
                                 print("Você não tinha o EP pronto")
                                 print("Sua alma foi devorada")
+                                game_over = True
                             else:
                                 print("Parabéns você entregou o EP a tempo")
                                 print("Você derrotou o monstro do Python")
@@ -251,7 +261,8 @@ def main():
                     print(' nao implementado ')
                     print('aqui, vai entrar no modo luta e ganhar um item')
                     print()                    
-                else:    
+                else:
+                    rodadas +=1
                     nome_cenario_atual = escolha
                 print()
             else:
@@ -261,6 +272,11 @@ def main():
                 game_over = True
     if vitoria == True:
         print("Você venceu")
+    elif rodadas >= maximo_de_rodadas:
+        print("Acabaram suas rodadas")
+        print("Você atrasou o EP")
+        print("Você morreu de tão frustrado")
+        print("Onde você morreu: {0}".format(nome_cenario_atual))
     else:
         print("Você morreu!")
         print()
