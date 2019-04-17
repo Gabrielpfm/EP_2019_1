@@ -1,0 +1,12 @@
+{
+"1" : {
+	"um Ninja": "ataque"}, 
+"2" : {
+	"um amigo": "ataque"}, 
+"3" : {
+	"um cachorro": "defesa"}, 
+"4" : {
+	"uma marmita": "defesa"}, 
+"5" : {
+	"uma máquina de café":"energia"}
+}

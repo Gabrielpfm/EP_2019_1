@@ -3,7 +3,8 @@
 		"titulo": "Saguao do perigo",
 		"descricao": "Voce esta no saguao de entrada do insper",
         "opcoes": {
-            "corredor": "Desvende os vastos corredores do Insper"
+            "corredor": "Desvende os vastos corredores do Insper",
+            "stats": "Lê seus pontos de vida, ataque e defesa"
         }
     },
     "andar professor": {
@@ -11,7 +12,8 @@
         "descricao": "Voce chegou ao andar da sala do seu professor",
         "opcoes": {
             "corredor": "Tomar o elevador de volta para o primeiro andar",
-            "professor": "Falar com o professor"
+            "professor": "Falar com o professor",
+            "stats": "Lê seus pontos de vida, ataque e defesa"
         }
     },
     "professor": {
@@ -24,7 +26,8 @@
         "descricao": "Voce esta na biblioteca",
         "opcoes": {
             "corredor": "Voltar para o corredor",
-            "aquario": "Vá até um aquário de estudos"
+            "aquario": "Vá até um aquário de estudos",
+            "stats": "Lê seus pontos de vida, ataque e defesa"
         }
     },
     "aquario": {
@@ -32,7 +35,8 @@
         "descricao": "Você está em um aquário de estudos. Está tão calmo...",
         "opcoes": {
             "estudar":"Ficar aqui para estudar",
-            "biblioteca":"Voltar pra biblioteca"
+            "biblioteca":"Voltar pra biblioteca",
+            "stats": "Lê seus pontos de vida, ataque e defesa"
         }
     },
     "corredor": {
@@ -41,7 +45,8 @@
         "opcoes": {
             "biblioteca":"Vá até a biblioteca 'estudar'",
             "quarto andar":"Tomar o elevador para o 4º andar",
-            "andar professor":"Tomar o elevador para o andar do professor"
+            "andar professor":"Tomar o elevador para o andar do professor",
+            "stats": "Lê seus pontos de vida, ataque e defesa"
         }
     },
     "quarto andar": {
@@ -51,7 +56,8 @@
             "relaxar":"Junte-se aos seus amigos e vá jogar WII!",
             "atendimento":"Vá pro atendimento. Vai que dá certo...",
             "corredor":"Volte para o corredor do primeiro andar",
-            "andar professor":"Tomar o elevador para o andar em que está o professor"                
+            "andar professor":"Tomar o elevador para o andar em que está o professor",
+            "stats": "Lê seus pontos de vida, ataque e defesa"       
         }
     }
 }
