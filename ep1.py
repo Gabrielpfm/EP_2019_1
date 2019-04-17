@@ -21,6 +21,7 @@ mal = {1:{"um veterano" : {"Iniciar batalha":"batalha"}},
 4:{"um professor":{"Ele te lembrou de outro trabalho":"dano"}},
 5:{"uma goteira":{"Você se molhou e ficou lento":"ataque"}}}
 
+itens = {1:"E-mail do atendimento",2:"Caixa de chocolate",3:"Vida extra"}
 def main():
     print("Na hora do sufoco!")
     print("------------------")
@@ -56,10 +57,11 @@ def main():
     ataque = 0
     dano = 0
     dano_total = 0.0
-    sistema_de_batalha = False    
+    sistema_de_batalha = False 
+    inventario ={}
+    item_drop = False
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
-        
         titulo = cenario_atual['titulo']
         descricao = cenario_atual['descricao']
                 
@@ -68,6 +70,21 @@ def main():
         print (descricao)
         print()
         dano = 0
+        if item_drop == True:
+            chance_item = random.randint(1,5)
+            qual_item = random.randint(1,3)
+            if chance_item == 1:
+                item = itens[qual_item]
+                print(tracinho("Você encontrou: {0}".format(item)))
+                print("Parabéns!")
+                print("Você encontrou: {0}".format(item))
+                print(tracinho("Você encontrou: {0}".format(item)))
+                if not item in inventario:
+                    inventario[item] = 1
+                else:
+                    inventario[item] += 1
+            item_drop = False
+        
         if encontros == True:
                 MOBS = random.randint(1,11)
                 mob = random.randint(1,5)
@@ -155,12 +172,21 @@ def main():
                         print(Health_bar(energia,dano_total))
                
         encontros = True
+        item_drop = True
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
-        elif Health_bar(energia,dano_total) <= 0 :
-            game_over = True
+        elif Health_bar(energia,dano_total) <= 0:
+            for i in inventario:
+                if i == "Vida extra":
+                    if inventario[i] <= 0:
+            
+                        game_over = True
+                    else:
+                        print("Você usou sua vida extra")
+                        print("Não morra de novo")
+                        print("\_(^-^)_/")
         else:
 
             escolha = ""
@@ -174,6 +200,8 @@ def main():
             escolha = input('Digite aqui => ')
             if escolha in opcoes:
                 if escolha == 'stats':
+                    encontros = False
+                    item_drop = False
                     print()
                     print("Sua vida é {0}".format(Health_bar(energia,dano_total)))
                     print("Sua defesa é {0}".format(Quantidade_de_defesa(defesa)))
@@ -189,6 +217,15 @@ def main():
                     print('aqui, vai aparecer o mob "amigo"')
                     print()
                 elif  escolha == 'atendimento':
+                    for i in inventario:
+                        if i == "E-mail do atendimento":
+                            if inventario[i] <= 0:
+                                print("Você foi avisado")
+                                print("¯\_(ツ)_/¯")
+                                game_over = True
+                            else:
+                                nome_cenario_atual = escolha
+                                
                     print()
                     print(' nao implementado ')
                     print('aqui, vai entrar no modo luta e ganhar um item')
