@@ -196,7 +196,10 @@ def main():
                         print("Não morra de novo")
                         print("\_(^-^)_/")
         elif cenario_atual == 'teleporte':
-            print ("batata")
+            rodadas+=1
+            escolha = input("Digite aqui =>")
+            nome_cenario_atual = escolha
+            print ()
         else:
 
             escolha = ""
@@ -216,11 +219,24 @@ def main():
                     print("Sua vida é {0}".format(Health_bar(energia,dano_total)))
                     print("Sua defesa é {0}".format(Quantidade_de_defesa(defesa)))
                     print("Seu ataque é {0}".format(Quantidade_de_ataque(ataque)))
+                elif escolha =='inventario':
+                    if len(inventario) == 0:
+                        print()
+                        print (" * * * *  * * * ")
+                        print ("Inventario vazio")
+                    else:
+                        print (inventario)
                 elif escolha == 'relaxar':
                     print("E a DP veio com tudo!")
                     print("Quem mandou não se empenhar")
                     print("¯\_(ツ)_/¯")
                     game_over = True
+                elif escolha == "estudar":
+                    rodadas +=1
+                    print ("você finalmente entendeu como usar"
+                           "a função 'print' "'\n'"*ganhou 1 de ataque*"'\n'"*ganhou 1 de defesa*")
+                    ataque += 1
+                    defesa += 1
                 elif escolha == 'barbara':
                     rodadas +=1
                     for i in inventario:
@@ -244,6 +260,7 @@ def main():
                                 print("(ლ‸－)")
                                 game_over = True
                             else:
+                                print ("você precisa do email do atendimento!")
                                 nome_cenario_atual = escolha
                 elif  escolha == 'entregar EP':
                     for i in inventario:
@@ -257,12 +274,7 @@ def main():
                                 print("Você derrotou o monstro do Python")
                                 print("(>'-')> <('-'<) ^('-')^ v('-')v(>'-')>")
                                 game_over = True
-                                vitoria = True
-                                
-                    print()
-                    print(' nao implementado ')
-                    print('aqui, vai entrar no modo luta e ganhar um item')
-                    print()                    
+                                vitoria = True          
                 else:
                     rodadas +=1
                     nome_cenario_atual = escolha
