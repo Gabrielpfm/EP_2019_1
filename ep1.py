@@ -195,7 +195,7 @@ def main():
                         print("Você usou sua vida extra")
                         print("Não morra de novo")
                         print("\_(^-^)_/")
-        elif cenario_atual == 'teleporte':
+        elif cenario_atual == 'teleportar':
             rodadas+=1
             escolha = input("Digite aqui =>")
             nome_cenario_atual = escolha
@@ -225,6 +225,7 @@ def main():
                         print (" * * * *  * * * ")
                         print ("Inventario vazio")
                     else:
+                        print ()
                         print (inventario)
                 elif escolha == 'relaxar':
                     print("E a DP veio com tudo!")
@@ -233,7 +234,7 @@ def main():
                     game_over = True
                 elif escolha == "estudar":
                     rodadas +=1
-                    print ("você finalmente entendeu como usar"
+                    print ("você finalmente entendeu como usar "
                            "a função 'print' "'\n'"*ganhou 1 de ataque*"'\n'"*ganhou 1 de defesa*")
                     ataque += 1
                     defesa += 1
@@ -260,7 +261,6 @@ def main():
                                 print("(ლ‸－)")
                                 game_over = True
                             else:
-                                print ("você precisa do email do atendimento!")
                                 nome_cenario_atual = escolha
                 elif  escolha == 'entregar EP':
                     for i in inventario:
@@ -269,12 +269,12 @@ def main():
                                 print("Você não tinha o EP pronto")
                                 print("Sua alma foi devorada")
                                 game_over = True
-                            else:
-                                print("Parabéns você entregou o EP a tempo")
-                                print("Você derrotou o monstro do Python")
-                                print("(>'-')> <('-'<) ^('-')^ v('-')v(>'-')>")
-                                game_over = True
-                                vitoria = True          
+                        else:
+                            print("Parabéns você entregou o EP a tempo")
+                            print("Você derrotou o monstro do Python")
+                            print("(>'-')> <('-'<) ^('-')^ v('-')v(>'-')>")
+                            game_over = True
+                            vitoria = True          
                 else:
                     rodadas +=1
                     nome_cenario_atual = escolha
