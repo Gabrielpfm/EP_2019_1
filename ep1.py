@@ -62,7 +62,7 @@ def main():
     item_drop = False
     vitoria = False
     rodadas = 0
-    maximo_de_rodadas = 5
+    maximo_de_rodadas = 30
     while not game_over and rodadas <= maximo_de_rodadas:
         cenario_atual = cenarios[nome_cenario_atual]
         titulo = cenario_atual['titulo']
@@ -195,6 +195,8 @@ def main():
                         print("Você usou sua vida extra")
                         print("Não morra de novo")
                         print("\_(^-^)_/")
+        elif cenario_atual == 'teleporte':
+            print ("batata")
         else:
 
             escolha = ""
