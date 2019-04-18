@@ -64,6 +64,7 @@ def main():
     rodadas = 0
     maximo_de_rodadas = 30
     retry = True
+    uma_vez = False
     
     while retry == True:
         if game_over == True:
@@ -78,6 +79,7 @@ def main():
                 inventario ={}
                 item_drop = False
                 vitoria = False
+                uma_vez = False
                 rodadas = 0
                 maximo_de_rodadas = 30
                 nome_cenario_atual = "inicio"
@@ -308,6 +310,7 @@ def main():
                                     nome_cenario_atual = escolha
                                     
                     elif escolha == "andar professor":
+                        rodadas += 1
                         encontros = False
                         item_drop = False
                         nome_cenario_atual = escolha
@@ -326,19 +329,33 @@ def main():
                                     game_over = True
                                 else:
                                     nome_cenario_atual = escolha
-                    elif  escolha == "entregar EP":
-                        for i in inventario:
-                            if i == "EP finalizado":
-                                if inventario[i] <= 0:
-                                    print("Você não tinha o EP pronto")
-                                    print("Sua alma foi devorada")
-                                    game_over = True
-                                else:
-                                    print("Parabéns você entregou o EP a tempo")
-                                    print("Você derrotou o monstro do Python")
-                                    print("(>'-')> <('-'<) ^('-')^ v('-')v(>'-')>")
-                                    game_over = True
-                                    vitoria = True          
+                    elif escolha == "entregar EP":
+                        if len(inventario) == 0 :
+                            print("Você não tinha o EP pronto")
+                            print("Sua alma foi devorada")
+                            game_over = True
+                        else:    
+                            for i in inventario:
+                                if "EP finalizado" not in inventario:
+                                    if uma_vez == False:
+                                        print("Você não tinha o EP pronto")
+                                        print("Sua alma foi devorada")
+                                        game_over = True
+                                        uma_vez = True
+                                else:    
+                                    if i == "EP finalizado":
+                                        if inventario[i] <= 0:
+                                            print("Você não tinha o EP pronto")
+                                            print("Sua alma foi devorada")
+                                            game_over = True
+                                        else:
+                                            print("Parabéns você entregou o EP a tempo")
+                                            print("Você derrotou o monstro do Python")
+                                            print("(>'-')> <('-'<) ^('-')^ v('-')v(>'-')>")
+                                            game_over = True
+                                            vitoria = True                            
+                            
+                                
                     else:
                         rodadas +=1
                         nome_cenario_atual = escolha
