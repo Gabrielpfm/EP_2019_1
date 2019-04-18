@@ -4,7 +4,8 @@
 		"descricao": "Voce esta no saguao de entrada do insper",
         "opcoes": {
             "corredor": "Desvende os vastos corredores do Insper",
-            "stats": "Lê seus pontos de vida, ataque e defesa"
+            "stats": "Lê seus pontos de vida, ataque e defesa",
+            "inventario":"checa seus itens"
         }
     },
     "andar professor": {
@@ -13,14 +14,17 @@
         "opcoes": {
             "corredor": "Tomar o elevador de volta para o primeiro andar",
             "professor": "Falar com o professor",
-            "stats": "Lê seus pontos de vida, ataque e defesa"
+            "stats": "Lê seus pontos de vida, ataque e defesa",
+            "inventario":"checa seus itens"
         }
     },
     "professor": {
         "titulo": "O monstro do Python",
         "descricao": "Voce foi pedir para o professor adiar o EP. O professor revelou que é um monstro disfarçado e parte para te assassinar.",
         "opcoes": {
-        	"entregar EP": "Use o EP finalizado para pôr um fim nesse demônio"
+        	"entregar EP": "Use o EP finalizado para pôr um fim nesse demônio",
+        	"stats": "Lê seus pontos de vida, ataque e defesa",
+        	"inventario":"checa seus itens"
         }
     },
     "biblioteca": {
@@ -29,7 +33,8 @@
         "opcoes": {
             "corredor": "Voltar para o corredor",
             "aquario": "Vá até um aquário de estudos",
-            "stats": "Lê seus pontos de vida, ataque e defesa"
+            "stats": "Lê seus pontos de vida, ataque e defesa",
+            "inventario":"checa seus itens"
         }
     },
     "aquario": {
@@ -38,7 +43,8 @@
         "opcoes": {
             "estudar":"Ficar aqui para estudar",
             "biblioteca":"Voltar pra biblioteca",
-            "stats": "Lê seus pontos de vida, ataque e defesa"
+            "stats": "Lê seus pontos de vida, ataque e defesa",
+            "inventario":"checa seus itens"
         }
     },
     "corredor": {
@@ -48,7 +54,8 @@
             "biblioteca":"Vá até a biblioteca estudar",
             "quarto andar":"Tomar o elevador para o 4º andar",
             "andar professor":"Tomar o elevador para o andar do professor",
-            "stats": "Lê seus pontos de vida, ataque e defesa"
+            "stats": "Lê seus pontos de vida, ataque e defesa",
+            "inventario":"checa seus itens"
         }
     },
     "quarto andar": {
@@ -59,7 +66,8 @@
             "atendimento":"Vá pro atendimento. Vai que dá certo...",
             "corredor":"Volte para o corredor do primeiro andar",
             "andar professor":"Tomar o elevador para o andar em que está o professor",
-            "stats": "Lê seus pontos de vida, ataque e defesa"       
+            "stats": "Lê seus pontos de vida, ataque e defesa",
+            "inventario":"checa seus itens"
         }
     },
     "barbara":{
@@ -67,7 +75,8 @@
     	"descricao": "Você se aproxima dela pedindo ajuda para finalizar o EP. Você entrega a caixa de chocolates pra ela e ela te dá a chave para o EP",
     	"opcoes": {
     		"quarto andar":"volte para o saguao do 4º andar",
-    		"teleportar":"Bárbar usa seus poderes para te teleportar até algum lugar..."
+    		"teleportar":"Bárbar usa seus poderes para te teleportar até algum lugar...",
+    		"inventario":"checa seus itens"
     	}
     },
     "atendimento":{
@@ -75,7 +84,8 @@
     	"descricao": "Você entra na sala de aula e percebe que lá, disposta a te ajudar, está a famigerada Bárbara",
     	"opcoes": {
     		"barbara":"Vá falar com a Bárbara. Não se esqueça de ter um presente a postos",
-    		"quarto andar":"Dê meia volta e vaze da sala"
+    		"quarto andar":"Dê meia volta e vaze da sala",
+    		"inventario":"checa seus itens"
     	}
     },
     "teleporte":{
