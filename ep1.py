@@ -80,6 +80,7 @@ def main():
                 vitoria = False
                 rodadas = 0
                 maximo_de_rodadas = 30
+                nome_cenario_atual = "inicio"
                 print("Limpando Salas...")
                 print("Restaurando Mobs...")
                 print("Retirando Itens...")
