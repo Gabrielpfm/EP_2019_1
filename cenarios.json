@@ -19,7 +19,9 @@
     "professor": {
         "titulo": "O monstro do Python",
         "descricao": "Voce foi pedir para o professor adiar o EP. O professor revelou que é um monstro disfarçado e parte para te assassinar.",
-        "opcoes": {"entregar EP":"Use o EP finalizado para pôr um fim nesse demônio"}
+        "opcoes": {
+        	"entregar EP": "Use o EP finalizado para pôr um fim nesse demônio"
+        }
     },
     "biblioteca": {
         "titulo": "Caverna da tranquilidade",
@@ -43,7 +45,7 @@
         "titulo": "Corredores infinitos",
         "descricao": "Você caminha pelos vastos corredores do insper.... Ao longo do caminho, algumas portas se revelam: ",
         "opcoes": {
-            "biblioteca":"Vá até a biblioteca 'estudar'",
+            "biblioteca":"Vá até a biblioteca estudar",
             "quarto andar":"Tomar o elevador para o 4º andar",
             "andar professor":"Tomar o elevador para o andar do professor",
             "stats": "Lê seus pontos de vida, ataque e defesa"
@@ -70,16 +72,25 @@
     },
     "atendimento":{
     	"titulo": "Sala da salvação (ou não)",
-    	"descricao": "Você entra na sala de aula e percebe que lá, disposta a ",
+    	"descricao": "Você entra na sala de aula e percebe que lá, disposta a te ajudar, está a famigerada Bárbara",
     	"opcoes": {
-    		"barbara":"Vá falar com a Bárbara. *Não se esqueça de ter um presente a postos*",
-    		"quarto andar":"Dê meia volta e vaze da sala",
+    		"barbara":"Vá falar com a Bárbara. Não se esqueça de ter um presente a postos",
+    		"quarto andar":"Dê meia volta e vaze da sala"
     	}
     },
     "teleporte":{
     	"título":"Dimensão Alternativa",
-    	"descricao": "Na dimensão alternativa, você pode escolher um lugar qualquer da sua memória para o qual se teleportar. Cuidado para não falar errado, você irá se perder nessa dimensão",
-    	"opções":
+    	"descricao": "Na dimensão alternativa, você pode escolher um lugar qualquer do jogo da sua memória para o qual se teleportar. Cuidado para não falar errado, você irá se perder nessa dimensão",
+    	"opções":{
+    		"inicio":"",
+    		"andar professor":"",
+    		"atendimento":"",
+    		"barbara":"",
+    		"quarto andar":"",
+    		"corredor":"",
+    		"aquario":"",
+    		"biblioteca":"",
+    		"professor":""
+    	}
     }
-
 }
