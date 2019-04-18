@@ -71,7 +71,7 @@
         }
     },
     "barbara":{
-    	"título": "Bárbara, a salvadora dos EPs",
+    	"titulo": "Bárbara, a salvadora dos EPs",
     	"descricao": "Você se aproxima dela pedindo ajuda para finalizar o EP. Você entrega a caixa de chocolates pra ela e ela te dá a chave para o EP",
     	"opcoes": {
     		"quarto andar":"volte para o saguao do 4º andar",
@@ -88,10 +88,10 @@
     		"inventario":"checa seus itens"
     	}
     },
-    "teleporte":{
-    	"título":"Dimensão Alternativa",
+    "teleportar":{
+    	"titulo":"Dimensão Alternativa",
     	"descricao": "Na dimensão alternativa, você pode escolher um lugar qualquer do jogo da sua memória para o qual se teleportar. Cuidado para não falar errado, você irá se perder nessa dimensão",
-    	"opções":{
+    	"opcoes":{
     		"inicio":"",
     		"andar professor":"",
     		"atendimento":"",
