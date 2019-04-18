@@ -240,6 +240,7 @@ def main():
                             print("\_(^-^)_/")
                             inventario["Vida extra"] = 0
                             dano_total = 0
+                            energia = 0 
             elif cenario_atual == 'teleportar':
                 rodadas+=1
                 encontros = False
