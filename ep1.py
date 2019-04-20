@@ -16,7 +16,7 @@ bem = {1:{"um Ninja":"ataque"},2:{"um amigo":"ataque"},3:{"um cachorro":"defesa"
        4:{"uma marmita":"defesa"},5:{"uma máquina de café":"energia"}}
 
 mal = {1:{"um veterano" : {"Iniciar Batalha":"batalha"}},
-2:{"um amigo" : {"Ele copiou seu trabalho":"dano"}},
+2:{"um 'amigo'" : {"Ele copiou seu trabalho":"dano"}},
 3:{"uma nota ruim":{"Você ficou desanimado": "defesa"}},
 4:{"um professor":{"Ele te lembrou de outro trabalho":"dano"}},
 5:{"uma goteira":{"Você se molhou e ficou lento":"ataque"}}}
@@ -32,6 +32,11 @@ def main():
     print("É o dia de entregar o EP e você está muuuuito atrasado! Você está "
         "na entrada do Insper, e quer procurar o professor para pedir um "
         "adiamento do EP (boa sorte...)")
+    print()
+    print('***')
+    print("Faça suas escolhas em 'Digite aqui'. Atenção: você tem 30 rodadas disponíveis, mas as opções "
+          "'stats' e 'inventário' não gastam rodadas. ")
+    print('***')
     print()
 
     cenarios, nome_cenario_atual = carregar_cenarios()
@@ -209,10 +214,10 @@ def main():
                 while sistema_de_batalha == True :
                     dano = 0
                     vida_inimigo = vida_inimigo - Quantidade_de_ataque(ataque)
-                    print ("Vida do seu Inimigo ==> {0}".format(vida_inimigo))
+                    print ("> Vida do seu Inimigo ==> {0}".format(vida_inimigo))
                     if vida_inimigo <= 0:
                         sistema_de_batalha = False
-                        print ('Você venceu') 
+                        print ('> Você venceu') 
                     else:
                         if Quantidade_de_defesa(defesa) > 0 :
                             dano += 1
@@ -221,9 +226,9 @@ def main():
                             dano += 1 
                             dano_total += dano
                         if Health_bar(energia,dano_total) <= 0:
-                            print('Você perdeu a batalha')
+                            print('> Você perdeu a batalha')
                             sistema_de_batalha = False
-                            print("Sua vida ==> {0}".format(Health_bar(energia,dano_total)))
+                            print("> Sua vida ==> {0}".format(Health_bar(energia,dano_total)))
                    
             encontros = True
             item_drop = True
@@ -244,22 +249,23 @@ def main():
                             inventario["Vida extra"] = 0
                             dano_total = 0
                             energia = 0 
-            elif cenario_atual == 'teleportar':
+            if cenario_atual == 'teleportar':
                 rodadas+=1
                 encontros = False
                 item_drop = False
-                escolha = input("Digite aqui =>")
-                nome_cenario_atual = escolha
-                print ()
             else:
-    
                 escolha = ""
                 print ()
                 print ('Qual será sua escolha?')
                 print ()
                 for opcao in opcoes:
-                    print ('"{0}" : {1}'.format(opcao,opcoes[opcao]))
-                    print ()
+                    if cenario_atual == 'teleportar':
+                        escolha = input("Digite aqui =>")
+                        nome_cenario_atual = escolha
+                    else:
+                        print ()
+                        print ('"{0}" : {1}'.format(opcao,opcoes[opcao]))
+                        print ()
                 
                 escolha = input('Digite aqui => ')
                 if escolha in opcoes:
@@ -297,17 +303,16 @@ def main():
                         item_drop = False
                         rodadas +=1
                         for i in inventario:
-                            if i == "Caixa de chocolate":
-                                if inventario[i] <= 0:
-                                    print("VOCÊ ESQUECEU DO PRESENTE!")
-                                    print("Você devia ter me escutado")
-                                    print("Bárbara: Você achou que eu ia te ajudar sem ganhar nada?")
-                                    print("Você foi completamento destruído pela Bárbara")
-                                    print("Sua vida é de {0}".format(Health_bar(0,9999999999999999999999999999999999)))
-                                    game_over = True
-                                else:
-                                    
-                                    nome_cenario_atual = escolha
+                            if "Caixa de chocolate" not in inventario:
+                                print()
+                                print("VOCÊ ESQUECEU DO PRESENTE!")
+                                print("Você devia ter me escutado")
+                                print("Bárbara: Você achou que eu ia te ajudar sem ganhar nada?")
+                                print("Você foi completamento destruído pela Bárbara")
+                                print("Sua vida é de {0}".format(Health_bar(0,9999999999999999999999999999999999)))
+                                game_over = True
+                            else:
+                                nome_cenario_atual = escolha
                                     
                     elif escolha == "andar professor":
                         rodadas += 1
@@ -319,16 +324,17 @@ def main():
                         item_drop = False
                         nome_cenario_atual = escolha
                     elif  escolha == "atendimento":
-                        
                         rodadas +=1
                         for i in inventario:
-                            if i == "E-mail do atendimento":
-                                if inventario[i] <= 0:
-                                    print("Você foi avisado")
-                                    print("(ლ‸－)")
-                                    game_over = True
-                                else:
-                                    nome_cenario_atual = escolha
+                            if "E-mail do atendimento" not in inventario:
+                                print()
+                                print("Você foi avisado. "
+                                      "Um veterano te chamou para jogar truco, e sem o e-mail, "
+                                      "você não tinha como provar que teria atendimento. ")
+                                print("(ლ‸－)")
+                                game_over = True
+                            else:
+                                nome_cenario_atual = escolha
                     elif escolha == "entregar EP":
                         if len(inventario) == 0 :
                             print("Você não tinha o EP pronto")
@@ -338,6 +344,7 @@ def main():
                             for i in inventario:
                                 if "EP finalizado" not in inventario:
                                     if uma_vez == False:
+                                        print()
                                         print("Você não tinha o EP pronto")
                                         print("Sua alma foi devorada")
                                         game_over = True
@@ -345,6 +352,7 @@ def main():
                                 else:    
                                     if i == "EP finalizado":
                                         if inventario[i] <= 0:
+                                            print()
                                             print("Você não tinha o EP pronto")
                                             print("Sua alma foi devorada")
                                             game_over = True
