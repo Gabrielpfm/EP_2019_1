@@ -60,10 +60,10 @@
     },
     "quarto andar": {
         "titulo": "Andar da dúvida",
-        "descricao": "O quarto andar. Você checara o seu e-mail, que dizia que na sala 405 teria atendimento. Porém, ao sair do elevador, você escuta ruídos vindos da salinha: são seus amigos de economia e ADM jogando videogame...",
+        "descricao": "O quarto andar. Você está motivado a estudar. Porém, ao sair do elevador, você escuta ruídos vindos da salinha: são seus amigos de economia e ADM jogando videogame...",
         "opcoes": {
             "relaxar":"Junte-se aos seus amigos e vá jogar WII!",
-            "atendimento":"Vá pro atendimento. Vai que dá certo...",
+            "atendimento":"Vá pro atendimento se você tiver recebido o e-mail. Vai que dá certo...",
             "corredor":"Volte para o corredor do primeiro andar",
             "andar professor":"Tomar o elevador para o andar em que está o professor",
             "stats": "Lê seus pontos de vida, ataque e defesa",
@@ -72,7 +72,7 @@
     },
     "barbara":{
     	"titulo": "Bárbara, a salvadora dos EPs",
-    	"descricao": "Você se aproxima dela pedindo ajuda para finalizar o EP. Você entrega a caixa de chocolates pra ela e ela te dá a chave para o EP",
+    	"descricao": "Você se aproxima dela pedindo ajuda para finalizar o EP. Você entrega a caixa de chocolates pra ela e ela, contente, te dá a CHAVE PARA O EP",
     	"opcoes": {
     		"quarto andar":"volte para o saguao do 4º andar",
     		"teleportar":"Bárbar usa seus poderes para te teleportar até algum lugar...",
