@@ -263,6 +263,7 @@ def main():
                         escolha = input("Digite aqui =>")
                         nome_cenario_atual = escolha
                     else:
+                        
                         print ()
                         print ('"{0}" : {1}'.format(opcao,opcoes[opcao]))
                         print ()
@@ -400,7 +401,22 @@ def main():
                 retry = True
             else:
                 retry = False
-    
+                print("  ________           __         _       _    ________ ")
+                print(" / _______|         /  \       | \     / |  |  ______|")
+                print("| |                / /\ \      |  \   /  |  | |_____  ")
+                print("| |    ____       / ____ \     |   \_/   |  |  _____| ")
+                print("| |   |__  |     / /    \ \    | |\___/| |  | |       ")
+                print("| |______| |    / /      \ \   | |     | |  | |______ ")
+                print(" \_________|   /_/        \_\  |_|     |_|  |________|")
+                print()
+                print("  ________    __          __    ________     ________ ")
+                print(" / ______ \   \ \        / /   |  ______|   |   ___  |")
+                print("| /      \ |   \ \      / /    | |_____     |  |___| |")
+                print("| |      | |    \ \    / /     |  _____|    |  _  ___|")
+                print("| |      | |     \ \  / /      | |          | | \ \   ")
+                print("| \______/ |      \ \/ /       | |______    | |  \ \  ")
+                print(" \________/        \__/        |________|   |_|   \_\ ")
+                
 # Programa principal.
 if __name__ == "__main__":
     main()
