@@ -107,6 +107,13 @@ def main():
                         "na entrada do Insper, e quer procurar o professor para pedir um "
                         "adiamento do EP (boa sorte...)")
                     print()
+                    print()
+                    print('***')
+                    print("Faça suas escolhas em 'Digite aqui'. Atenção: você tem 30 rodadas disponíveis, mas as opções "
+                          "'stats' e 'inventário' não gastam rodadas. ")
+                    print('***')
+                    print()
+
         
         while not game_over and rodadas <= maximo_de_rodadas:
             cenario_atual = cenarios[nome_cenario_atual]
@@ -237,18 +244,21 @@ def main():
                 print("Acabaram-se suas opções! Mwo mwo mwooooo...")
                 game_over = True
             elif Health_bar(energia,dano_total) <= 0:
-                for i in inventario:
-                    if i == "Vida extra":
-                        if inventario[i] <= 0:
-                
-                            game_over = True
-                        else:
-                            print("Você usou sua vida extra")
-                            print("Não morra de novo")
-                            print("\_(^-^)_/")
-                            inventario["Vida extra"] = 0
-                            dano_total = 0
-                            energia = 0 
+                if len(inventario) == 0:
+                    game_over = True
+                else:
+                    for i in inventario:
+                        if i == "Vida extra":
+                            if inventario[i] <= 0:
+                    
+                                game_over = True
+                            else:
+                                print("Você usou sua vida extra")
+                                print("Não morra de novo")
+                                print("\_(^-^)_/")
+                                inventario["Vida extra"] = 0
+                                dano_total = 0
+                                energia = 0 
             if cenario_atual == 'teleportar':
                 rodadas+=1
                 encontros = False
