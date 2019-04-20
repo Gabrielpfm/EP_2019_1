@@ -326,16 +326,25 @@ def main():
                         nome_cenario_atual = escolha
                     elif  escolha == "atendimento":
                         rodadas +=1
-                        for i in inventario:
-                            if "E-mail do atendimento" not in inventario:
-                                print()
-                                print("Você foi avisado. "
-                                      "Um veterano te chamou para jogar truco, e sem o e-mail, "
-                                      "você não tinha como provar que teria atendimento. ")
-                                print("(ლ‸－)")
-                                game_over = True
-                            else:
-                                nome_cenario_atual = escolha
+                        if len(inventario) == 0:
+                            print()
+                            print("Você foi avisado. "
+                                  "Um veterano te chamou para jogar truco, e sem o e-mail, "
+                                  "você não tinha como provar que teria atendimento. ")
+                            print("(ლ‸－)")
+                            game_over = True
+                            
+                        else:
+                            for i in inventario:
+                                if "E-mail do atendimento" not in inventario:
+                                    print()
+                                    print("Você foi avisado. "
+                                          "Um veterano te chamou para jogar truco, e sem o e-mail, "
+                                          "você não tinha como provar que teria atendimento. ")
+                                    print("(ლ‸－)")
+                                    game_over = True
+                                else:
+                                    nome_cenario_atual = escolha
                     elif escolha == "entregar EP":
                         if len(inventario) == 0 :
                             print("Você não tinha o EP pronto")
