@@ -70,7 +70,7 @@ def main():
     maximo_de_rodadas = 30
     retry = True
     uma_vez = False
-    
+    boss_battle = False
     while retry == True:
         if game_over == True:
                 game_over = False
@@ -86,6 +86,7 @@ def main():
                 vitoria = False
                 uma_vez = False
                 rodadas = 0
+                boss_battle = False
                 maximo_de_rodadas = 30
                 nome_cenario_atual = "inicio"
                 print("Limpando Salas...")
@@ -378,8 +379,37 @@ def main():
                                             game_over = True
                                         else:
                                             print("Parabéns você entregou o EP a tempo")
-                                            print("Você derrotou o monstro do Python")
-                                            print("(>'-')> <('-'<) ^('-')^ v('-')v(>'-')>")
+                                            print("O monstro do Python não acreditou que você conseguiu")
+                                            print("Ele inicia uma batalha")
+                                            print("Você fica totalmente energizado")
+                                            print("Sua vida é recuperada")
+                                            dano_total = 0
+                                            boss_battle = True
+                                            while boss_battle == True :
+                                                vida_boss = 20
+                                                dano = 2
+                                                vida_boss = vida_boss - Quantidade_de_ataque(ataque)
+                                                print ("> Vida do seu Inimigo ==> {0}".format(vida_boss))
+                                                if vida_boss <= 0:
+                                                    boss_battle = False
+                                                    print ('> Você venceu')
+                                                    print("Você derrotou o monstro do Python")
+                                                    print("(>'-')> <('-'<) ^('-')^ v('-')v(>'-')>")
+                                                    game_over = True
+                                                    vitoria = True         
+                                                else:
+                                                    if Quantidade_de_defesa(defesa) > 0 :
+                                                        dano += 1
+                                                        dano_total += (dano/Quantidade_de_defesa(defesa))
+                                                    else:
+                                                        dano += 1 
+                                                        dano_total += dano
+                                                    if Health_bar(energia,dano_total) <= 0:
+                                                        print('> Você perdeu a batalha')
+                                                        boss_battle = False
+                                                        print("> Sua vida ==> {0}".format(Health_bar(energia,dano_total)))
+                                                
+                                            
                                             game_over = True
                                             vitoria = True                            
                             
