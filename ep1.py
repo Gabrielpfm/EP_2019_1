@@ -223,6 +223,7 @@ def main():
                     dano = 0
                     vida_inimigo = vida_inimigo - Quantidade_de_ataque(ataque)
                     print ("> Vida do seu Inimigo ==> {0}".format(vida_inimigo))
+                    print("> Sua vida ==> {0}".format(Health_bar(energia,dano_total)))
                     if vida_inimigo <= 0:
                         sistema_de_batalha = False
                         print ('> Você venceu') 
@@ -236,7 +237,7 @@ def main():
                         if Health_bar(energia,dano_total) <= 0:
                             print('> Você perdeu a batalha')
                             sistema_de_batalha = False
-                            print("> Sua vida ==> {0}".format(Health_bar(energia,dano_total)))
+                            
                    
             encontros = True
             item_drop = True
