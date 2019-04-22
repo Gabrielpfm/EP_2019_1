@@ -63,7 +63,7 @@ def main():
     dano = 0
     dano_total = 0.0
     sistema_de_batalha = False 
-    inventario ={1:"E-mail do atendimento",2:"Caixa de chocolate"}
+    inventario ={}
     item_drop = False
     vitoria = False
     rodadas = 0
@@ -269,14 +269,17 @@ def main():
                 print ()
                 print ('Qual será sua escolha?')
                 print ()
-                if cenario_atual != "teleportar":
-                    for opcao in opcoes:
+                for opcao in opcoes:
+                    if cenario_atual == 'teleportar':
+                        escolha = input("Digite aqui =>")
+                        nome_cenario_atual = escolha
+                    else:
+                        
                         print ()
                         print ('"{0}" : {1}'.format(opcao,opcoes[opcao]))
                         print ()
-                    escolha = input('Digite aqui => ')
-                else:
-                    escolha = input("Digite aqui =>")
+                
+                escolha = input('Digite aqui => ')
                 if escolha in opcoes:
                     if escolha == 'stats':
                         encontros = False
