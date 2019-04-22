@@ -63,7 +63,7 @@ def main():
     dano = 0
     dano_total = 0.0
     sistema_de_batalha = False 
-    inventario ={1:"E-mail do atendimento",2:"Caixa de chocolate"}
+    inventario ={}
     item_drop = False
     vitoria = False
     rodadas = 0
