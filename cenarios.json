@@ -89,20 +89,5 @@
     		"stats": "Lê seus pontos de vida, ataque e defesa",
     		"inventario":"checa seus itens"
     	}
-    },
-    "teleportar":{
-    	"titulo":"Dimensão Alternativa",
-    	"descricao": "Na dimensão alternativa, você pode escolher um lugar qualquer do jogo da sua memória para o qual se teleportar. Cuidado para não falar errado, você irá se perder nessa dimensão",
-    	"opcoes":{
-    		"inicio":"",
-    		"andar professor":"",
-    		"atendimento":"",
-    		"barbara":"",
-    		"quarto andar":"",
-    		"corredor":"",
-    		"aquario":"",
-    		"biblioteca":"",
-    		"professor":""
-    	}
     }
 }
