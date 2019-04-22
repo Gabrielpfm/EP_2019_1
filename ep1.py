@@ -385,14 +385,14 @@ def main():
                                             print("Sua vida é recuperada")
                                             dano_total = 0
                                             boss_battle = True
+                                            vida_boss = 20
                                             while boss_battle == True :
-                                                vida_boss = 20
+                                                
                                                 dano = 2
                                                 vida_boss = vida_boss - Quantidade_de_ataque(ataque)
                                                 print ("> Vida do seu Inimigo ==> {0}".format(vida_boss))
                                                 if vida_boss <= 0:
                                                     boss_battle = False
-                                                    print ('> Você venceu')
                                                     print("Você derrotou o monstro do Python")
                                                     print("(>'-')> <('-'<) ^('-')^ v('-')v(>'-')>")
                                                     game_over = True
@@ -411,7 +411,7 @@ def main():
                                                 
                                             
                                             game_over = True
-                                            vitoria = True                            
+                                                                       
                             
                                 
                     else:
