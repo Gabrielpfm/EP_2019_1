@@ -49,7 +49,7 @@ def main():
         return defence   
         
     def Health_bar(energia,dano_total):
-        life  = 3 + energia - (dano_total)
+        life  = 4 + energia - (dano_total)
         return life 
     
     def tracinho(nome_cenario_atual):
@@ -387,6 +387,7 @@ def main():
                                             boss_battle = True
                                             vida_boss = 20
                                             while boss_battle == True :
+
                                                 
                                                 dano = 2
                                                 vida_boss = vida_boss - Quantidade_de_ataque(ataque)
@@ -401,18 +402,38 @@ def main():
                                                     if Quantidade_de_defesa(defesa) > 0 :
                                                         dano += 1
                                                         dano_total += (dano/Quantidade_de_defesa(defesa))
+
+                                                dano = 2
+                                                vida_boss = vida_boss - Quantidade_de_ataque(ataque)
+                                                print ("> Vida do seu Inimigo ==> {0}".format(vida_boss))
+                                                print("> Sua vida ==> {0}".format(Health_bar(energia,dano_total)))
+                                                continuar = input("digite qualquer coisa para continuar ")
+                                                while continuar != True:
+                                                    if vida_boss <= 0:
+                                                        boss_battle = False
+                                                        print("Você derrotou o monstro do Python")
+                                                        print("(>'-')> <('-'<) ^('-')^ v('-')v(>'-')>")
+                                                        game_over = True
+                                                        vitoria = True         
+
                                                     else:
-                                                        dano += 1 
-                                                        dano_total += dano
+                                                        if Quantidade_de_defesa(defesa) > 0 :
+                                                            dano += 1
+                                                            dano_total += (dano/Quantidade_de_defesa(defesa))
+                                                        else:
+                                                            dano += 1 
+                                                            dano_total += dano
                                                     if Health_bar(energia,dano_total) <= 0:
                                                         print('> Você perdeu a batalha')
                                                         boss_battle = False
-                                                        print("> Sua vida ==> {0}".format(Health_bar(energia,dano_total)))
+                                                        
                                                 
                                             
                                             game_over = True
+
                                                                        
-                            
+
+
                                 
                     else:
                         rodadas +=1
