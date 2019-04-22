@@ -76,6 +76,7 @@
     	"opcoes": {
     		"quarto andar":"volte para o saguao do 4º andar",
     		"teleportar":"Bárbar usa seus poderes para te teleportar até algum lugar...",
+    		"stats": "Lê seus pontos de vida, ataque e defesa",
     		"inventario":"checa seus itens"
     	}
     },
@@ -85,6 +86,7 @@
     	"opcoes": {
     		"barbara":"Vá falar com a Bárbara. Não se esqueça de ter um presente a postos",
     		"quarto andar":"Dê meia volta e vaze da sala",
+    		"stats": "Lê seus pontos de vida, ataque e defesa",
     		"inventario":"checa seus itens"
     	}
     },
