@@ -303,6 +303,7 @@ def main():
                     encontros = False
                     item_drop = False
                     rodadas += 1
+                    print()
                     print("Na dimensão alternativa, você pode escolher um "
                     "lugar qualquer do jogo da sua memória para o qual se teleportar. "
                     "Cuidado para não falar errado, você irá se perder nessa dimensão. ")
@@ -384,7 +385,7 @@ def main():
                                         boss_battle = True
                                         vida_boss = 20
                                         while boss_battle == True :
-                                            dano = 2
+                                            dano = 0
                                             vida_boss = vida_boss - Quantidade_de_ataque(ataque)
                                             print ("> Vida do seu Inimigo ==> {0}".format(vida_boss))
                                             print("> Sua vida ==> {0}".format(Health_bar(energia,dano_total)))
@@ -398,16 +399,19 @@ def main():
                                                     vitoria = True         
                                                 else:
                                                     if Quantidade_de_defesa(defesa) > 0 :
-                                                        dano += 1
+                                                        dano += 2
                                                         dano_total += (dano/Quantidade_de_defesa(defesa))
                                                     else:
-                                                        dano += 1 
+                                                        dano += 2 
                                                         dano_total += dano
                                                 if Health_bar(energia,dano_total) <= 0:
                                                     print('> Você perdeu a batalha')
+                                                    print()
+                                                    print("Sua alma foi devorada")
+                                                    print()
                                                     boss_battle = False
                                                     game_over = True
-                            
+                                                    break
                                 
                 else:
                     rodadas +=1
